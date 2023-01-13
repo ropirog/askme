@@ -32,7 +32,7 @@ class QuestionsController < ApplicationController
 
   def hide
     @question.update(hidden: true)
-    redirect_to question_path(@question), notice: 'Вопрос скрыт!'
+    redirect_to questions_path, notice: 'Вопрос скрыт!'
   end
 
   private
