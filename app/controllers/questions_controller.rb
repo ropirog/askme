@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
     @question = Question.create(question_params)
 
     if @question.save
-      redirect_to question_path(question), notice: 'Новый вопрос создан!'
+      redirect_to question_path(@question), notice: 'Новый вопрос создан!'
     else
       flash.now[:alert] = 'Вы неправильно заполнили поле для вопроса'
       render :new
