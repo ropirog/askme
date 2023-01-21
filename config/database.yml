@@ -22,4 +22,9 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: <%= Rails.application.credentials.production[:encoding] %>
+  database: <%= Rails.application.credentials.production[:database] %>
+  poll: <%= Rails.application.credentials.production[:poll] %>
+  username: <%= Rails.application.credentials.production[:username] %>
+  password: <%= Rails.application.credentials.production[:password] %>
