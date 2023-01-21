@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :questions
+
   has_secure_password
   before_validation :downcase_nickname, :downcase_email
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
