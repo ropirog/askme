@@ -46,3 +46,11 @@ a, button {
 .line-transfer {
   white-space: pre-line;
 }
+
+.text-light-grey {
+  color: #c0c0c0;
+}
+
+.text-center {
+  text-align: center;
+}
