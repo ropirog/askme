@@ -7,6 +7,9 @@ class User < ApplicationRecord
   validates :nickname, presence: true, uniqueness: true, length: { maximum: 40 }, format: { with: /\A[a-zA-Z0-9_]+\z/ }
   validates :nav_color, format: { with: /\A#\h{3}{1,2}\z/ }
 
+  include Gravtastic
+  gravtastic(secure: true, filetype: :png, size: 100, default: 'retro')
+
   private
 
   def downcase_nickname

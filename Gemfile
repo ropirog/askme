@@ -8,6 +8,7 @@ gem 'bootsnap', require: false
 gem 'dotenv-rails'
 gem 'importmap-rails'
 gem 'font-awesome-rails'
+gem 'gravtastic'
 gem 'jbuilder'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.4'
