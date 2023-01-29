@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   before_action :set_question_for_current_user, only: %i[update destroy hide edit]
   def create
     question_params = params.require(:question).permit(:body, :user_id)
-    @question = Question.create(question_params)
+    @question = Question.new(question_params)
     @question.author = current_user
 
     if @question.save
@@ -31,8 +31,8 @@ class QuestionsController < ApplicationController
   end
 
   def index
-    @questions = Question.order(created_at: :desc).last(10)
-    @users = User.order(created_at: :desc).last(10)
+    @questions = Question.order(created_at: :desc).first(10)
+    @users = User.order(created_at: :desc).first(10)
   end
 
   def new
