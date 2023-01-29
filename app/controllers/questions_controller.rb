@@ -36,7 +36,7 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @user = User.find_by_nickname(params[:user_id])
+    @user = User.find_by!(nickname: params[:user_nickname])
     @question = Question.new(user: @user)
   end
 

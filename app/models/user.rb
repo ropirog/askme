@@ -2,6 +2,11 @@ class User < ApplicationRecord
   has_many :questions, dependent: :destroy
 
   has_secure_password
+
+  def to_param
+    nickname
+  end
+
   before_validation :downcase_nickname, :downcase_email
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :nickname, presence: true, uniqueness: true, length: { maximum: 40 }, format: { with: /\A[a-zA-Z0-9_]+\z/ }
@@ -9,10 +14,6 @@ class User < ApplicationRecord
 
   include Gravtastic
   gravtastic(secure: true, filetype: :png, size: 100, default: 'retro')
-
-  def to_param
-    nickname
-  end
 
   private
 
