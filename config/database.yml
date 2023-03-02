@@ -25,6 +25,6 @@ production:
   adapter: postgresql
   encoding: <%= Rails.application.credentials.production[:encoding] %>
   database: <%= Rails.application.credentials.production[:database] %>
-  poll: <%= Rails.application.credentials.production[:poll] %>
+  pool: <%= Rails.application.credentials.production[:pool] %>
   username: <%= Rails.application.credentials.production[:username] %>
   password: <%= Rails.application.credentials.production[:password] %>
